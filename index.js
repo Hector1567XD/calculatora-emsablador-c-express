@@ -4,9 +4,12 @@ const CompositionRoot = require('./calculadora/composition-root.js');
 const app = express();
 const port = 3000;
 
+app.use(require('cors')())
+
 app.get('/', (req, res) => {
   res.send('Holi :3!')
 });
+
 
 const calculadora = CompositionRoot.getCalculadora();
 
