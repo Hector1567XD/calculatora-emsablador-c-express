@@ -35,10 +35,26 @@ class CalculatorPowStrategy {
     }
 }
 
+class CalculatorBinaryStrategy {
+    constructor(shell) { this.shell = shell; }
+    async execute(numA, _) {
+        return +(await this.shell.execute(`${calculatorCommand} bin ${numA}`));
+    }
+}
+
+class CalculatorOctalStrategy {
+    constructor(shell) { this.shell = shell; }
+    async execute(numA, _) {
+        return +(await this.shell.execute(`${calculatorCommand} oct ${numA}`));
+    }
+}
+
 module.exports = {
     CalculatorAddStrategy,
     CalculatorSubStrategy,
     CalculatorMulStrategy,
     CalculatorDivStrategy,
     CalculatorPowStrategy,
+    CalculatorBinaryStrategy,
+    CalculatorOctalStrategy
 };

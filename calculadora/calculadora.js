@@ -1,5 +1,13 @@
 const exec = require('child_process').exec;
-const { CalculatorAddStrategy, CalculatorSubStrategy, CalculatorMulStrategy, CalculatorDivStrategy, CalculatorPowStrategy } = require('./strategies');
+const { 
+    CalculatorAddStrategy,
+    CalculatorSubStrategy,
+    CalculatorMulStrategy,
+    CalculatorDivStrategy,
+    CalculatorPowStrategy,
+    CalculatorBinaryStrategy,
+    CalculatorOctalStrategy
+} = require('./strategies');
 
 class ShellProvider {
     execute(command) {
@@ -23,7 +31,9 @@ class Calculadora {
             'sub': CalculatorSubStrategy,
             'mul': CalculatorMulStrategy,
             'div': CalculatorDivStrategy,
-            'pow': CalculatorPowStrategy
+            'pow': CalculatorPowStrategy,
+            'bin': CalculatorBinaryStrategy,
+            'oct': CalculatorOctalStrategy
         };
 
         if (!strategyDictionary[command]) 
